@@ -41,36 +41,11 @@ git clone https://github.com/TeamFirefli/firefli && cd firefli
 ```
   </Step>
 <Step>
-<h4>Setting up your .env file</h4>
-Just simply run this command in your console.
-
-```bash
-echo "SESSION_SECRET=$(openssl rand -base64 36 | tr -d '\n')" >> .env
-echo "POSTGRES_PASSWORD=$(openssl rand -base64 36 | tr -d '\n')" >> .env
-echo 'POSTGRES_DB=Firefli' >> .env
-echo 'POSTGRES_USER=Firefli' >> .env
-echo 'POSTGRES_PORT=5432' >> .env
-```
-</Step>
-
-
-<Step>
   <h4>Starting Firefli</h4>
 
   ```
 docker compose up --build -d
   ```
-</Step>
-
-<Step>
-<h4>Database Initialization</h4>
-
-Run the following command:
-
-```bash
-docker exec -it firefli-firefli-1 npx prisma generate
-docker exec -it firefli-firefli-1 npx prisma db push
-```
 </Step>
 
 
